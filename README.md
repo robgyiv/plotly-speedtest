@@ -16,4 +16,4 @@ You'll need a Plotly account and the following:
 
 ## Running
 
-A basic example is to set up a cron job to run `python plotly-internet-speed.py` at set intervals.
+A basic example is to set up a cron job to run `python plotly-speedtest.py` at set intervals.
