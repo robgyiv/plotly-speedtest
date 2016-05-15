@@ -57,7 +57,7 @@ def update_chart(test_results, date_time):
 
 
 def main():
-    date_time = datetime.datetime.now().strftime("%Y-%m-%d %H")
+    date_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     speedtest_cmd = "/usr/local/bin/speedtest-cli --simple"
     process = subprocess.Popen(speedtest_cmd.split(), stdout=subprocess.PIPE)
     process_output = process.communicate()[0]
