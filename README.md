@@ -6,8 +6,8 @@ Simple Python script to be run on a Raspberry Pi to test internet speed and plot
 You'll need a Plotly account and the following:
 
 ### Libraries
-- plotly
-- speedtest-cli
+- [plotly](https://pypi.python.org/pypi/plotly)
+- [speedtest-cli](https://pypi.python.org/pypi/speedtest-cli)
 
 ### Environment varibles
 - `PLOTLY_USERNAME`
