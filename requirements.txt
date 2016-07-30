@@ -1,0 +1,2 @@
+plotly==1.9.1
+speedtest-cli==0.3.4
