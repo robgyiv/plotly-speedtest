@@ -48,7 +48,7 @@ def update_chart(test_results, date_time):
                 )
             )
 
-    py.iplot(
+    py.plot(
         data,
         filename="utils/broadband-speed",
         fileopt="extend",
