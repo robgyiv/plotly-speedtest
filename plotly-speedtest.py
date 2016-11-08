@@ -52,7 +52,8 @@ def update_chart(test_results, date_time):
         data,
         filename="utils/broadband-speed",
         fileopt="extend",
-        sharing="public"
+        sharing="public",
+        auto_open=False
     )
 
 
