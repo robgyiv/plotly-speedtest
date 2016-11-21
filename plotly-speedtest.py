@@ -7,6 +7,15 @@ import plotly.plotly as py
 import plotly.graph_objs as go
 
 
+def main():
+    date_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    speedtest_cmd = "/usr/local/bin/speedtest-cli --simple"
+    process = subprocess.Popen(speedtest_cmd.split(), stdout=subprocess.PIPE)
+    process_output = process.communicate()[0]
+    speedtest_output = process_output.split()
+    parse_results(speedtest_output, date_time)
+
+
 def parse_results(speedtest_output, date_time):
     test_results = []
     for i in xrange(0, len(speedtest_output), 3):
@@ -55,15 +64,6 @@ def update_chart(test_results, date_time):
         sharing="public",
         auto_open=False
     )
-
-
-def main():
-    date_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    speedtest_cmd = "/usr/local/bin/speedtest-cli --simple"
-    process = subprocess.Popen(speedtest_cmd.split(), stdout=subprocess.PIPE)
-    process_output = process.communicate()[0]
-    speedtest_output = process_output.split()
-    parse_results(speedtest_output, date_time)
 
 
 if __name__ == '__main__':
