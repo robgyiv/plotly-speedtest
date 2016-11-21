@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 
-import os
-import subprocess
 import datetime
+import os
 import plotly.plotly as py
 import plotly.graph_objs as go
+import subprocess
 
 
 def main():
