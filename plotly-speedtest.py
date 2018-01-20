@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import csv
 import datetime
 import os
 import plotly.plotly as py
@@ -25,7 +26,23 @@ def parse_results(speedtest_output, date_time):
             "measurement": speedtest_output[i + 2],
             "date": date_time
             })
+    save_to_file(test_results, date_time)
     update_chart(test_results, date_time)
+
+
+def save_to_file(test_results, date_time):
+    dir_path = os.path.dirname(os.path.abspath(__file__))
+    csv_filename = '/results.csv'
+    csv_path = dir_path + csv_filename
+    print 'csv path', csv_path
+    fields = [
+        test_results[0]['value'],
+        test_results[1]['value'],
+        test_results[2]['value']
+    ]
+    with open(csv_path, 'a') as f:
+        writer = csv.writer(f)
+        writer.writerow(fields)
 
 
 def update_chart(test_results, date_time):
