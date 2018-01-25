@@ -36,6 +36,7 @@ def save_to_file(test_results, date_time):
     csv_path = dir_path + csv_filename
     print 'csv path', csv_path
     fields = [
+        date_time,
         test_results[0]['value'],
         test_results[1]['value'],
         test_results[2]['value']
